@@ -3,16 +3,25 @@ name: Daily Auto Commit
 on:
   schedule:
     - cron: '30 5 * * *'  # Runs daily at 05:30 UTC
-  workflow_dispatch:
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   daily-commit:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write  # Required for committing changes
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Checkout Code
-        uses: actions/checkout@v2
-      - name: Deploy for 24f1001616@ds.study.iitm.ac.in
+      - name: Deploy for 24f1001616@ds.study.iitm.ac.in  # ✅ Email in step name
         run: echo "Deploying for 24f1001616@ds.study.iitm.ac.in"
+
+      - name: Make a Commit
+        run: |
+          echo "Automated commit at $(date)" >> auto_commit_log.txt  # Append to log file
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "24f1001616@ds.study.iitm.ac.in"
+          git add auto_commit_log.txt
+          git commit -m "Automated commit from GitHub Actions"
+          git push
