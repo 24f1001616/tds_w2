@@ -14,5 +14,5 @@ jobs:
 
       - name: Checkout Code
         uses: actions/checkout@v2
-      - name: Deploy
+      - name: Deploy for 24f1001616@ds.study.iitm.ac.in
         run: echo "Deploying for 24f1001616@ds.study.iitm.ac.in"
