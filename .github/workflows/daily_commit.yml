@@ -12,18 +12,7 @@ jobs:
       contents: write
     steps:
 
+      - name: Checkout Code
+        uses: actions/checkout@v2
       - name: Deploy
         run: echo "Deploying for 24f1001616@ds.study.iitm.ac.in"
-      
-      - name: Update timestamp file with 24f1001616@ds.study.iitm.ac.in
-        run: |
-          echo "Last update: $(date)" > timestamp.txt
-          echo "Deploying for 24f1001616@ds.study.iitm.ac.in"
-          
-      - name: Commit changes 24f1001616@ds.study.iitm.ac.in
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add timestamp.txt
-          git commit -m "Daily automated commit [24f1001616@ds.study.iitm.ac.in]"
-          git push
