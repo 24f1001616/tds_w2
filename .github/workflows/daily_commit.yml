@@ -3,7 +3,7 @@ name: Daily Auto Commit
 on:
   schedule:
     - cron: '30 5 * * *'  # Runs daily at 05:30 UTC
-  workflow_dispatch:  # Allows manual triggering
+  workflow_dispatch:  # Allows manual trigger
 
 jobs:
   daily-commit:
@@ -17,7 +17,7 @@ jobs:
       - name: Deploy for 24f1001616@ds.study.iitm.ac.in  # ✅ Email in step name
         run: echo "Deploying for 24f1001616@ds.study.iitm.ac.in"
 
-      - name: Make a Commit
+      - name: Commit for 24f1001616@ds.study.iitm.ac.in  # ✅ Email in step name
         run: |
           echo "Automated commit at $(date)" >> auto_commit_log.txt  # Append to log file
           git config --global user.name "GitHub Actions"
