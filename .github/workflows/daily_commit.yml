@@ -11,8 +11,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Update timestamp file with 24f1001616@ds.study.iitm.ac.in
-        uses: actions/checkout@v4
 
       - name: Deploy
         run: echo "Deploying for 24f1001616@ds.study.iitm.ac.in"
@@ -20,6 +18,7 @@ jobs:
       - name: Update timestamp file with 24f1001616@ds.study.iitm.ac.in
         run: |
           echo "Last update: $(date)" > timestamp.txt
+          echo "Deploying for 24f1001616@ds.study.iitm.ac.in"
           
       - name: Commit changes 24f1001616@ds.study.iitm.ac.in
         run: |
