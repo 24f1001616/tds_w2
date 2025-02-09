@@ -11,7 +11,7 @@ jobs:
     permissions:
       contents: write  # Required for committing changes
     steps:
-      - name: Checkout Repository
+      - name: Checkout Repository using 24f1001616@ds.study.iitm.ac.in
         uses: actions/checkout@v4
 
       - name: Deploy for 24f1001616@ds.study.iitm.ac.in  # ✅ Email in step name
