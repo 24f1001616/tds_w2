@@ -12,7 +12,7 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Repository - 24f1001616@ds.study.iitm.ac.in
         uses: actions/checkout@v4
 
       - name: Commit Step - 24f1001616@ds.study.iitm.ac.in  # ✅ Email is **EXACTLY** in the step name
