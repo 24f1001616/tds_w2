@@ -13,11 +13,12 @@ jobs:
     steps:
       - name: Update timestamp file with 24f1001616@ds.study.iitm.ac.in
         uses: actions/checkout@v4
-
+        run: echo "Deploying for 24f1001616@ds.study.iitm.ac.in"
+        
       - name: Update timestamp file with 24f1001616@ds.study.iitm.ac.in
         run: |
           echo "Last update: $(date)" > timestamp.txt
-
+          
       - name: Commit changes 24f1001616@ds.study.iitm.ac.in
         run: |
           git config --global user.name "GitHub Actions"
